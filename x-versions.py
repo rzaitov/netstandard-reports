@@ -18,7 +18,7 @@ def get_framework_versions():
 	mac_version = mac_version.strip().split("/")[-1]
 	android_version = android_version.strip().split("/")[-1]
 
-	versions = "Xamarin.iOS {ios_ver}\nXamarin.Mac {mac_ver}\nXamarin.Android {android_version}".format(ios_ver=ios_version, mac_ver=mac_version, android_version=android_version)
+	versions = "{ios_ver}\tXamarin.iOS.framework\n{mac_ver}\tXamarin.Mac.framework\n{android_version}\tXamarin.Android.framework".format(ios_ver=ios_version, mac_ver=mac_version, android_version=android_version)
 	return versions
 
 prepare_commit_msg("a-versions.txt", get_framework_versions())
